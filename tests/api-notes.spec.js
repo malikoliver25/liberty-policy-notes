@@ -15,7 +15,7 @@ test.describe('Liberty Mutual - Policyholder Notes API', () => {
       const endTime = Date.now();
       const duration = endTime - startTime;
 
-      // Crucial for the Indy region performance check requested by the PM
+      // Crucial for the region performance check requested by the PM
       console.log(` Response time for "${record.title}": ${duration}ms`);
 
       // 1. Validate Status Code (201 = Created)
