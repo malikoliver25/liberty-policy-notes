@@ -1,0 +1,65 @@
+{
+  "info": {
+    "_postman_id": "c121d089-3a0c-4056-bc3c-6e1508214987",
+    "name": "CMS_Policyholder_Service_SmokeTests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51993295",
+    "_collection_link": "https://go.postman.co/collection/51993295-c121d089-3a0c-4056-bc3c-6e1508214987?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "GET_Policyholder_Details_User2",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Check if name is Janet\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.data.first_name).to.eql(\"Janet\");",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://reqres.in/api/users/2/",
+          "protocol": "https",
+          "host": [
+            "reqres",
+            "in"
+          ],
+          "path": [
+            "api",
+            "users",
+            "2",
+            ""
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
